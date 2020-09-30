@@ -11,13 +11,6 @@ from linebot.models import (
 )
 import os
 
-# サンプル追加
-import json
-
-FILENAME="test.json"
-# サンプル追加
-
-
 app = Flask(__name__)
 
 # 環境変数取得
@@ -104,15 +97,7 @@ inquiry_list = {
      'n' : '◆必要な書類◆\n①家族異動届\n②健康保険証の返却\
             \n\n◆書類記載時の注意事項◆*就職により扶養を外す場合、異動日は新しいお勤め先の会社保険に 加入した日を記載してください。',
 }
-#サンプル追加
-json.load(FILENAME)
 
-fd = open(FILENAME, mode='r')
-data = json.load(fd)
-fd.close()
-
-container_obj = FlexSendMessage.new_from_json_dict(data)
-#サンプル追加
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
 
@@ -123,11 +108,8 @@ def handle_message(event):
     else:
         line_bot_api.reply_message(
             event.reply_token,
-            #TextSendMessage(text=event.message.text)) #ここでオウム返しのメッセージを返します。
+            TextSendMessage(text=event.message.text)) #ここでオウム返しのメッセージを返します。
 
-            #サンプル追加
-            messages=container_obj)
-            #サンプル追加
 
 # ポート番号の設定
 if __name__ == "__main__":

@@ -1,0 +1,19 @@
+{
+    "type": "imagemap",
+    "baseUrl": "https://kei-aroma.com/test",
+    "altText": "アロマリラックスヨガ",
+    "baseSize": {
+        "width": 1040,
+        "height": 605
+    },
+    "actions": {
+        "type": "uri",
+        "linkUri": "https://kei-aroma.com/",
+        "area": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 605
+        }
+    }
+}

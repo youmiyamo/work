@@ -11,6 +11,11 @@ from linebot.models import (
 )
 import os
 
+# サンプル追加
+import imagemapcreate as imc
+
+# サンプル追加
+
 app = Flask(__name__)
 
 # 環境変数取得
@@ -108,8 +113,11 @@ def handle_message(event):
     else:
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text=event.message.text)) #ここでオウム返しのメッセージを返します。
+#            TextSendMessage(text=event.message.text)) #ここでオウム返しのメッセージを返します。
 
+            #サンプル追加
+            messages=imc.make_imagemap())
+            #サンプル追加
 
 # ポート番号の設定
 if __name__ == "__main__":

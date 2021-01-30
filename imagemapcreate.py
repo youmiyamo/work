@@ -13,14 +13,14 @@ fd.close()
 
 def make_imagemap():
     messages = ImagemapSendMessage(
-        base_url=data[baseUrl],
-        alt_text=data[altText],
-        base_size=BaseSize(width=data[baseSize][width], height=data[baseSize][height]),
+        base_url=data['baseUrl'],
+        alt_text=data['altText'],
+        base_size=BaseSize(width=data['baseSize']['width'], height=data['baseSize']['height']),
         actions=[
             URIImagemapAction(
-                link_uri=data[actions][linkUri],
+                link_uri=data['actions']['linkUri'],
                 area=ImagemapArea(
-                    x=0, y=0, width=data[actions][area][width], height=data[actions][area][height]
+                    x=0, y=0, width=data['actions']['area']['width'], height=data['actions']['area']['height']
                 )
             ),
             MessageImagemapAction(
